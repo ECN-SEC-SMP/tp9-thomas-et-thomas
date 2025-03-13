@@ -8,7 +8,6 @@ void afficheVector(std::vector<std::string> const &a)
         std::cout << s << " ";
     }
     std::cout << std::endl;
-    std::cout << "----------------" << std::endl;
 }
 
 std::string concatener(std::vector<std::string> const &a)

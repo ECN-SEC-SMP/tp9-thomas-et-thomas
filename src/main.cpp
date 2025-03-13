@@ -9,6 +9,7 @@
 
 int main(int argc, char const *argv[])
 {
+    std::cout << "-------------------------------1 VECTEUR D’ENTIERS--------------------------------" << std::endl;
     // Créer un vecteur d'entiers
     std::vector<int> entiers;
     for (int i = 0; i < 3; i++)
@@ -40,13 +41,17 @@ int main(int argc, char const *argv[])
     std::cout << "Taille: " << entiers.size() << std::endl;
     entiers.push_back(3);
     std::cout << "Taille: " << entiers.size() << std::endl;
+    std::cout << "----------------" << std::endl;
 
     // Copier un vecteur
     std::vector<int> entiers_copie;
     std::copy(entiers.begin(), entiers.end(), std::back_inserter(entiers_copie));
+    for (auto &&e : entiers_copie)
+    {
+        std::cout << e << std::endl;
+    }
 
-    // ----------------------------------------------------------------------------------
-    std::cout << "----------------------------------------------------------------------------------" << std::endl;
+    std::cout << "--------------------------2 VECTEUR DE CHAINES DE CARACTÈRES----------------------" << std::endl;
 
     // Créer un vecteur de chaînes de caractères
     std::vector<std::string> string;
@@ -57,11 +62,9 @@ int main(int argc, char const *argv[])
     string.push_back("?");
     
     std::cout << "La taille du vecteur est de : " << string.size() << std::endl; // Nombre d'éléments dans le vecteur
-
     std::cout << "----------------" << std::endl;
 
     std::cout << "La capacité du vecteur est de : " << string.capacity() << std::endl; // Espace disponible alloué dynamiquement par rapport à la taille
-
     std::cout << "----------------" << std::endl;
 
     // Afficher le vecteur avec une boucle for et un index
@@ -144,16 +147,18 @@ int main(int argc, char const *argv[])
 
     // Afficher le vecteur avec la fonction afficheVector()
     afficheVector(string);
+    std::cout << "----------------" << std::endl;
 
     // Concaténer tous les éléments du vecteur et afficher le résultat
     std::cout << concatener(string) << std::endl;
+    std::cout << "----------------" << std::endl;
 
     // Ajouter une virgule après chaque élément du vecteur et afficher le résultat
     ajoute_virgule(string);
     // Afficher le vecteur avec la fonction afficheVector()
     afficheVector(string);
 
-    std::cout << "----------------------------------------------------------------------------------" << std::endl;
+    std::cout << "-----------------------------------3 LES LISTES-----------------------------------" << std::endl;
 
     // Créer une liste
     std::list<int> l = {7, 5, 16, 8, 22, 1, 3, 30};
@@ -176,9 +181,8 @@ int main(int argc, char const *argv[])
         std::cout << e << " ";
     }
     std::cout << std::endl;
-    std::cout << "----------------" << std::endl;
 
-    std::cout << "----------------------------------------------------------------------------------" << std::endl;
+    std::cout << "--------------------------5 LECTURE/ÉCRITURE DE FICHIER CSV-----------------------" << std::endl;
 
     // Lire les dates à partir d'un fichier CSV
     std::map<int, std::string> dates;
@@ -195,6 +199,7 @@ int main(int argc, char const *argv[])
     new_data[2021] = "Vaccin";
     new_data[2022] = "Confinement";
     writeCSV("new_data.csv", new_data);
+    std::cout << "new_data.csv written" << std::endl;
     
     return 0;
 }
