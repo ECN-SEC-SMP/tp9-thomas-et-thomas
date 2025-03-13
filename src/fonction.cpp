@@ -21,3 +21,11 @@ std::string concatener(std::vector<std::string> const &a)
     return sentence;
 
 }
+
+void ajoute_virgule(std::vector<std::string> &a)
+{
+    for (auto &&s : a)
+    {
+        s.push_back(',');
+    }
+}

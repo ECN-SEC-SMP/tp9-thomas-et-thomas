@@ -124,10 +124,8 @@ int main(int argc, char const *argv[])
 
     std::cout << concatener(string) << std::endl;
 
-
-
-
-
+    ajoute_virgule(string);
+    afficheVector(string);
     
     return 0;
 }
