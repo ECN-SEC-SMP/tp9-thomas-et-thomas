@@ -1,6 +1,8 @@
 #include <iostream>
 #include <algorithm>
 #include <vector>
+#include <list>
+#include <string>
 
 #include "fonction.h"
 
@@ -37,7 +39,8 @@ int main(int argc, char const *argv[])
     std::vector<int> entiers_copie;
     std::copy(entiers.begin(), entiers.end(), std::back_inserter(entiers_copie));
 
-// ----------------------------------------------------------------------------------
+    // ----------------------------------------------------------------------------------
+    std::cout << "----------------------------------------------------------------------------------" << std::endl;
 
     std::vector<std::string> string;
     string.push_back("Bonjour");
@@ -126,6 +129,26 @@ int main(int argc, char const *argv[])
 
     ajoute_virgule(string);
     afficheVector(string);
+
+    // ----------------------------------------------------------------------------------
+    std::cout << "----------------------------------------------------------------------------------" << std::endl;
+
+    std::list<int> l = {7, 5, 16, 8, 22, 1, 3, 30};
+    for (auto &&e : l)
+    {
+        std::cout << e << " ";
+    }
+    std::cout << std::endl;
+    std::cout << "----------------" << std::endl;
+    auto it = l.begin();
+    std::advance(it, 2);
+    l.erase(it);
+    for (auto &&e : l)
+    {
+        std::cout << e << " ";
+    }
+    std::cout << std::endl;
+    std::cout << "----------------" << std::endl;
     
     return 0;
 }
